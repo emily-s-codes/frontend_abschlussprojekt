@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as CiIcons from "react-icons/ci";
+import ratingStar from "../assets/img/Star.png"
 
 
 function SingleProduct() {
@@ -20,7 +21,10 @@ function SingleProduct() {
                 return (
                     <div key={product.id}>
                         <img src={product.thumbnail}></img>
-                        <p><CiIcons.CiStar />{product.rating}</p>
+                        <div className='ratingDiv'>
+                            <img src={ratingStar}></img>
+                            <p>{product.rating}</p>
+                        </div>
                         <p>{product.title}</p>
                         <p>{product.price}</p>
                     </div>
