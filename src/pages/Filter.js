@@ -28,7 +28,7 @@ function Filter() {
         <div>
             <div className='filterNav'>
                 <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
-                <h2>Filters</h2>
+                <h2 className='filterHeadline'>Filters</h2>
             </div>
             <div>
                 <section className='categories'>
@@ -57,7 +57,8 @@ function Filter() {
                     })}
                 </section>
             </div>
-        </div>
+            <button className='filterButton' type='button'>Apply Filter</button>
+        </div >
     )
 }
 
