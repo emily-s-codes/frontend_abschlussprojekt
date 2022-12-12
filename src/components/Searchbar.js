@@ -32,6 +32,7 @@ function SearchBar({ placeholder, data }) {
 
     const clearButton = () => {
         setFilteredData([]);
+        setWordEntered("");
     }
 
     return (
