@@ -4,6 +4,55 @@
   box-sizing: border-box;
 }
 
+/*======== Navbar =======*/
+.navBarBox {
+  display: flex;
+}
+
+.search input {
+  background-color: #FFFFFF;
+  border: 2px solid #1E2126;
+  border-radius: 2px;
+  padding: 15px;
+  height: 30px;
+  width: 300px;
+}
+
+.searchResults {
+  margin-top: 5px;
+  color: #1E2126;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: #1E2126 0px 5px 15px;
+  padding: 15px;
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+
+.searchResults .searchItems {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: #1E2126;
+}
+
+.searchItems p {
+  margin-left: 10px;
+}
+
+.searchResults a {
+  text-decoration: none;
+}
+
+.searchResults a:hover {
+  background-color: #828B9A;
+}
+
 .navbarButton {
   background-color: #364FD4;
 }

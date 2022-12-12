@@ -1,6 +1,7 @@
 // import React, { useEffect, useState } from 'react'
 import filterButton from "../assets/img/Vector.svg"
 import * as CiIcons from "react-icons/ci";
+import SearchBar from "./Searchbar";
 
 
 function Navbar() {
@@ -17,9 +18,9 @@ function Navbar() {
 
 
     return (
-        <div>
+        <div className="navBarBox">
             <CiIcons.CiSearch />
-            <input type="text" placeholder='Search'></input>
+            <SearchBar placeholder="Enter product name" />
             <button className='navbarButton'><img alt="" src={filterButton}></img></button>
         </div>
     )
