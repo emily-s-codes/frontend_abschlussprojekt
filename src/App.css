@@ -13,10 +13,25 @@
   background-color: #FFFFFF;
   border: 2px solid #1E2126;
   border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   padding: 15px;
   height: 30px;
   width: 300px;
 }
+
+.searchIcon {
+  height: 60px;
+  width: 50px;
+  background-color: #FFFFFF;
+  display: grid;
+  place-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+
 
 .searchResults {
   margin-top: 5px;
@@ -52,6 +67,12 @@
 .searchResults a:hover {
   background-color: #828B9A;
 }
+
+#clearButton {
+  cursor: pointer;
+}
+
+/* ======== Other; needs sorting ======= */
 
 .navbarButton {
   background-color: #364FD4;
