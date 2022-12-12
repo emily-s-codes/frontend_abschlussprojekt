@@ -11,15 +11,16 @@ function ProductDetails() {
             .then((response) => response.json())
             .then((arrayData) => {
                 setArrayData(arrayData)
-            }, [])
+                console.log(arrayData)
+            })
+    }, [params.id])
+    return (
+        <div>
+            <p>{arrayData.title}</p>
+            <Footer />
+        </div>
+    )
 
-        return (
-            <div>
-                <p>{arrayData.products[0].title}</p>
-                <Footer />
-            </div>
-        )
-    })
 }
 
 export default ProductDetails;
