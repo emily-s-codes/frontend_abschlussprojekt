@@ -16,3 +16,15 @@
 .ratingDiv {
   display: flex;
 }
+
+/* =======Filter======= */
+.filterNav {
+  display: flex;
+}
+
+.filterButton {
+  color: #FFFFFF;
+  background-color: #364FD4;
+  padding: 1%;
+  border-radius: 10px;
+}
