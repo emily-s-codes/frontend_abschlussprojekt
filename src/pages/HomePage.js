@@ -4,11 +4,13 @@ import Navbar from "../components/Navbar"
 import SingleProduct from "../components/SingleProduct"
 import Footer from "../components/Footer"
 
+const apiData = "https://dummyjson.com/products";
+
 function HomePage() {
     const [arrayData, setArrayData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://dummyjson.com/products`)
+        fetch(apiData)
             .then((response) => response.json())
             .then((arrayData) => {
                 setArrayData(arrayData)
@@ -23,9 +25,6 @@ function HomePage() {
             <Bonus />
             <h3>Popular</h3>
             <div className='homeProductDisplay'>
-                <SingleProduct />
-                <SingleProduct />
-                <SingleProduct />
                 <SingleProduct />
             </div>
             <Footer />
