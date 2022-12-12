@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import * as CiIcons from "react-icons/ci";
 import ratingStar from "../assets/img/Star.png"
 
 
@@ -20,9 +19,9 @@ function SingleProduct() {
             {arrayData?.products?.map(product => {
                 return (
                     <div key={product.id}>
-                        <img src={product.thumbnail}></img>
+                        <img src={product.thumbnail} alt={product.title}></img>
                         <div className='ratingDiv'>
-                            <img src={ratingStar}></img>
+                            <img src={ratingStar} alt="star"></img>
                             <p>{product.rating}</p>
                         </div>
                         <p>{product.title}</p>
