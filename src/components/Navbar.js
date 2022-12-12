@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import HomePage from '../pages/HomePage';
 import filterButton from "../assets/img/Vector.svg"
-import * as FaIcons from "react-icons/fa";
+import * as CiIcons from "react-icons/ci";
 
 
 function Navbar(props) {
@@ -19,8 +19,9 @@ function Navbar(props) {
 
     return (
         <div>
-            <input type="text" placeholder={<img src={FaIcons.FaSearch} />}></input>
-            <button><img src={filterButton}></img></button>
+            <CiIcons.CiSearch />
+            <input type="text" placeholder='Search'></input>
+            <button className='navbarButton'><img src={filterButton}></img></button>
         </div>
     )
 }

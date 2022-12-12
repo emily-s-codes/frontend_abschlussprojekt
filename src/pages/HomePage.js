@@ -18,10 +18,16 @@ function HomePage() {
 
 
     return (
-        <div>
+        <div><h2>Find your favourite product</h2>
             <Navbar />
             <Bonus />
-            <SingleProduct />
+            <h3>Popular</h3>
+            <div className='homeProductDisplay'>
+                <SingleProduct />
+                <SingleProduct />
+                <SingleProduct />
+                <SingleProduct />
+            </div>
             <Footer />
         </div>
     )
