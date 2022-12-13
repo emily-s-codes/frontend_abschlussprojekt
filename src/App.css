@@ -184,7 +184,7 @@ input:focus {
 .categoryCheckbox:checked+label,
 .priceCheckbox:checked+label,
 .brandCheckbox:checked+label {
-  border: 1px solid #364FD4;
+  border: 2px solid #364FD4;
   color: #ffffff;
   background-color: #364FD4;
 }

@@ -8,6 +8,7 @@ function Filter() {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedPrice, setSelectedPrice] = useState([]);
     const [selectedBrands, setSelectedBrands] = useState([]);
+    const [filtered, setFiltered] = useState([]);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products/categories")
@@ -56,9 +57,11 @@ function Filter() {
     }
     console.log(selectedBrands) // array of brands, check adds, uncheck removes
 
-    // function clickHandlerAllFilters() {
-    //     KOMMT!
-    // }
+    function clickHandlerAllFilters() {
+        setFiltered(prev => [...prev, selectedCategories, selectedPrice, selectedBrands])
+    }
+
+    console.log(`filtered: ${filtered}`)
 
     return (
         <div>
@@ -106,8 +109,7 @@ function Filter() {
                     })}
                 </section>
             </div>
-            {/* onClick={filterCategories} */}
-            <button className='filterButton' type='button' >Apply Filter</button>
+            <button onClick={clickHandlerAllFilters} className='filterButton' type='button'>Apply Filter</button>
         </div >
     )
 }
