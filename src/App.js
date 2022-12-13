@@ -7,21 +7,7 @@ import Filter from "./pages/Filter";
 import ProductList from "./pages/ProductList";
 import { useEffect, useState } from 'react';
 
-const apiData = "https://dummyjson.com/products";
-
 function App() {
-  const [arrayData, setArrayData] = useState([]);
-
-  useEffect(() => {
-    fetch(apiData)
-      .then((response) => response.json())
-      .then((arrayData) => {
-        setArrayData(arrayData)
-        console.log(arrayData.products)
-      })
-  }, [])
-
-
   return (
     <div className="App">
       <Router>

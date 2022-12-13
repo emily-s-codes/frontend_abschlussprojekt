@@ -1,6 +1,5 @@
 // import React, { useEffect, useState } from 'react'
 import filterButton from "../assets/img/Vector.svg"
-import * as CiIcons from "react-icons/ci";
 import SearchBar from "./Searchbar";
 
 

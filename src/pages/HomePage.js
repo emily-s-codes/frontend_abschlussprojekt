@@ -4,21 +4,7 @@ import Navbar from "../components/Navbar"
 import SingleProduct from "../components/SingleProduct"
 import Footer from "../components/Footer"
 
-const apiData = "https://dummyjson.com/products";
-
 function HomePage() {
-    const [arrayData, setArrayData] = useState([]);
-
-    useEffect(() => {
-        fetch(apiData)
-            .then((response) => response.json())
-            .then((arrayData) => {
-                setArrayData(arrayData)
-                console.log(arrayData.products)
-            })
-    }, [])
-
-
     return (
         <div className='homeStyle'><h2>Find your favourite Product</h2>
             <Navbar />
