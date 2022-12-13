@@ -1,28 +1,65 @@
+/*======== App =======*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*======== HomePage =======*/
+
+.ratingDiv {
+  display: flex;
+}
+
 /*======== Navbar =======*/
+
 .navBarBox {
+  display: flex;
+  margin-left: 5%;
+}
+
+.navbarButton {
+  background-color: #364FD4;
+  padding: 1%;
+  margin-left: 5px;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+/*======== Searchbar =======*/
+
+.searchInput {
   display: flex;
 }
 
 .search input {
+  font-size: 18px;
   background-color: #FFFFFF;
-  border: 2px solid #1E2126;
-  border-radius: 2px;
+  border-top: 2px solid #1E2126;
+  border-bottom: 2px solid #1E2126;
+  border-left: 2px solid #1E2126;
+  border-right: 0px;
+  border-radius: 10px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   padding: 15px;
-  height: 30px;
+  height: 50px;
   width: 300px;
 }
 
 .searchIcon {
-  height: 60px;
+  font-size: 30px;
+  height: 50px;
   width: 50px;
+  border-radius: 10px;
+  border-top: 2px solid #1E2126;
+  border-bottom: 2px solid #1E2126;
+  border-right: 2px solid #1E2126;
+  border-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   background-color: #FFFFFF;
   display: grid;
   place-items: center;
@@ -38,7 +75,6 @@ input:focus {
   color: #1E2126;
   background-color: #FFFFFF;
   border: 0;
-  border-radius: 2px;
   box-shadow: #1E2126 0px 5px 15px;
   padding: 15px;
   height: 200px;
@@ -70,21 +106,20 @@ input:focus {
 
 #clearButton {
   cursor: pointer;
+  font-size: 30px;
 }
 
 /* ======== Other; needs sorting ======= */
 
 .navbarButton {
   background-color: #364FD4;
+  height: 34px;
+  width: 50px;
 }
 
 .homeProductDisplay {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-.ratingDiv {
-  display: flex;
 }
 
 /* =======Filter======= */
@@ -97,8 +132,16 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
-}
 
 .selected {
   border: 1px solid blue;
+}
+
+/* =======Homepage========== */
+
+.homeProductDisplay {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto
+
 }
