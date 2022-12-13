@@ -127,6 +127,8 @@ input:focus {
   padding: 1%;
   border-radius: 10px;
 
+.selected {
+  border: 1px solid blue;
 }
 
 /* =======Homepage========== */
