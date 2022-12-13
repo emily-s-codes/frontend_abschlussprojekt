@@ -12,6 +12,12 @@
   display: flex;
 }
 
+.homeProductDisplay {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto
+}
+
 /*======== Navbar =======*/
 
 .navBarBox {
@@ -158,10 +164,11 @@ input:focus {
   display: none;
 }
 
-/* =======Homepage========== */
+/* ======= ProductDetails ========== */
 
-.homeProductDisplay {
+.productDetailsDiv {
   display: flex;
   justify-content: center;
-  margin: 0 auto
+  flex-direction: column;
+  width: 80%;
 }
