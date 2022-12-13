@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-// import ProductDetail from "../pages/ProductDetails.js";
-// import { useParams } from "react-router-dom"
 import * as CiIcons from "react-icons/ci";
 
 function SearchBar() {
