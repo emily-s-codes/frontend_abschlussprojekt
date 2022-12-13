@@ -33,12 +33,6 @@
   display: flex;
 }
 
-.homeProductDisplay {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto
-}
-
 /*======== Navbar =======*/
 
 .navBarBox {
@@ -48,21 +42,13 @@
 }
 
 .navbarButton {
-  align-items: center;
   background-color: #364FD4;
-
   padding: 1%;
   border: 1px solid transparent;
   border-radius: 12px;
-
   height: 50px;
   width: 50px;
   margin: 15px 0;
-}
-
-.navbarButton img {
-  width: 30px;
-  height: 30px;
 }
 
 /*======== Searchbar =======*/
@@ -108,10 +94,10 @@ input:focus {
 
 .searchResults {
   margin-top: 5px;
-  color: transparent;
+  color: black;
   background-color: #FFFFFF;
   border: 0;
-  box-shadow: transparent 0px 5px 15px;
+  box-shadow: black 0px 5px 15px;
   padding: 15px;
   height: 200px;
   width: 300px;
@@ -125,7 +111,7 @@ input:focus {
   height: 50px;
   display: flex;
   align-items: center;
-  color: transparent;
+  color: black;
 }
 
 .searchItems p {
@@ -168,32 +154,16 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
+
 }
 
-.categoryLabel,
-.priceLabel,
-.brandLabel {
-  display: inline-block;
-  border: 2px solid #364FD4;
-  width: 200px;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
+.selected {
+  border: 1px solid blue;
 }
 
-.categoryCheckbox:checked+label,
-.priceCheckbox:checked+label,
-.brandCheckbox:checked+label {
-  border: 1px solid #364FD4;
-  color: #ffffff;
-  background-color: #364FD4;
-}
+/* =======Homepage========== */
 
-.categoryCheckbox,
-.priceCheckbox,
-.brandCheckbox {
-  display: none;
-}
+
 
 .homeProductDisplay {
   display: flex;
@@ -262,12 +232,14 @@ input:focus {
   font-family: poppins_400;
   font-size: 10px;
   font-weight: 400;
+
 }
 
 #titleStyle {
   font-family: poppins_600;
   font-weight: 600;
   font-size: 14px;
+
 }
 
 #priceStyle {
