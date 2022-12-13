@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 function Filter() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
-    const [arrayData, setArrayData] = useState([]);
-    const [selectedCategories, setSelectedCategories] = useState(arrayData);
+    const [selectedCategories, setSelectedCategories] = useState(!categories);
     const [buttonSelect, setButtonSelect] = useState(false);
 
     useEffect(() => {
@@ -22,48 +21,32 @@ function Filter() {
         fetch("https://dummyjson.com/products")
             .then(res => res.json())
             .then((products) => {
-                setProducts(products)
-                console.log(products.products)
+                setProducts(products.products)
+                console.log(products)
             })
     }, [])
 
-    useEffect(() => {
-        fetch("https://dummyjson.com/products")
-            .then((response) => response.json())
-            .then((arrayData) => {
-                setArrayData(arrayData.products)
-                console.log(arrayData)
-            })
-    }, [])
-
-    const [subset, setSubset] = useState(arrayData);
-
-    if (!arrayData) {
-        return;
+    if (!products) {
+        return <div>Loading products...</div>;
+    }
+    if (!categories) {
+        return <div>Loading categories...</div>;
     }
 
     const chosenCategories = document.getElementsByName("filterCategories");
 
-    chosenCategories.forEach(category => {
-        console.log(category.id)
-    })
-
     let selected = [];
     const filterCategories = () => {
         selected = chosenCategories.checked;
-        const filteredCategories = arrayData.filter(singleItem => singleItem.title.toLowerCase().includes(selected));
+        const filteredCategories = products?.filter(singleItem => singleItem.title.toLowerCase().includes(selected));
         setSelectedCategories(filteredCategories)
     }
-    if (subset) {
-        console.log(subset);
-    }
+
+    console.log(selected)
 
     function clickHandler(e) {
         setButtonSelect(!buttonSelect);
-
     }
-
-
 
     return (
         <div>
@@ -74,21 +57,12 @@ function Filter() {
             <div>
                 <section className='categories'>
                     <h3>Categories</h3>
-                    {chosenCategories.forEach(category => {
-                        console.log(category.id)
-                    })}
-                    {arrayData?.map(singleItem => {
-                        return (
-                            <section key={singleItem.id}>
-                                <input type="checkbox" name="filterCategories" id={singleItem.title} className="categoryCheckbox" />
-                                <label onClick={clickHandler} htmlFor={singleItem.title} className={buttonSelect ? "" : "selected"}>{singleItem.category}</label>
-                                {/* <label onClick={() => setButtonSelect(!buttonSelect)} className={buttonSelect ? "" : "selected"} htmlFor={singleItem.title}>{singleItem.category}</label> */}
-                            </section>
-                        )
-                    })}
                     {categories?.map((category, index) => {
                         return (
-                            <p key={index} onClick={clickHandler}>{category}</p>
+                            <section key={index}>
+                                <input type="checkbox" name="filterCategories" id={category} className="categoryCheckbox" />
+                                <label onClick={clickHandler} htmlFor={category} className={buttonSelect ? "" : "selected"}>{category}</label>
+                            </section>
                         )
                     })}
                 </section>
@@ -110,7 +84,7 @@ function Filter() {
                     })}
                 </section>
             </div>
-            <button className='filterButton' type='button'>Apply Filter</button>
+            <button className='filterButton' type='button' onClick={filterCategories}>Apply Filter</button>
         </div >
     )
 }
