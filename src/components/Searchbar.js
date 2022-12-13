@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as CiIcons from "react-icons/ci";
 
-function SearchBar({ placeholder, data }) {
+function SearchBar() {
 
     const [searchData, setSearchData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
