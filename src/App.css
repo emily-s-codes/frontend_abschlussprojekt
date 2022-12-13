@@ -154,11 +154,20 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
+}
 
+
+.categoryCheckbox:checked+label,
+.priceCheckbox:checked+label,
+.brandCheckbox:checked+label {
+  border: 2px solid #364FD4;
+  color: #ffffff;
+  background-color: #364FD4;
 }
 
 .selected {
   border: 1px solid blue;
+
 }
 
 /* =======Homepage========== */
