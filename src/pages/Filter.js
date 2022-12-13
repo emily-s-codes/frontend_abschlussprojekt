@@ -57,12 +57,14 @@ function Filter() {
     }
     console.log(selectedBrands) // array of brands, check adds, uncheck removes
 
-    function clickHandlerAllFilters() {
-        setFiltered(prev => [...prev, selectedCategories, selectedPrice, selectedBrands])
+    function clickHandlerAllFilters(props) {
+        return (
+            setFiltered(prev => [...prev, selectedCategories, selectedPrice, selectedBrands])
+        )
     }
-
-    console.log(`filtered: ${filtered}`)
-    console.log(filtered.filter(item => (item === products)))
+    console.log(typeof filtered)
+    console.log(filtered)
+    // console.log(filtered.filter(item => (item === products)))
 
     return (
         <div>
@@ -115,4 +117,4 @@ function Filter() {
     )
 }
 
-export default Filter
+export default Filter;
