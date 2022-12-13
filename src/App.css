@@ -111,6 +111,12 @@ input:focus {
 
 /* ======== Other; needs sorting ======= */
 
+.navbarButton {
+  background-color: #364FD4;
+  height: 34px;
+  width: 50px;
+}
+
 .homeProductDisplay {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -126,6 +132,8 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
+
+}
 
 .selected {
   border: 1px solid blue;
