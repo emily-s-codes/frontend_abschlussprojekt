@@ -20,7 +20,7 @@ function HomePage() {
 
 
     return (
-        <div><h2>Find your favourite product</h2>
+        <div className='homeStyle'><h2>Find your favourite Product</h2>
             <Navbar />
             <Bonus />
             <h3>Popular</h3>
