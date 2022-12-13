@@ -62,6 +62,7 @@ function Filter() {
     }
 
     console.log(`filtered: ${filtered}`)
+    console.log(filtered.filter(item => (item === products)))
 
     return (
         <div>
