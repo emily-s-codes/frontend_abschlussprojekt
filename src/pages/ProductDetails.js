@@ -22,7 +22,7 @@ function ProductDetails() {
             <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
             <h2>{arrayData.title}</h2>
             <div className='detailsContainer'>
-                <img src={arrayData.thumbnail}></img>
+                <img src={arrayData.thumbnail} alt={arrayData.title}></img>
                 <div className='buttonContainer'>
                     <p>{arrayData.title}</p>
                     <div className='counterDiv'>
