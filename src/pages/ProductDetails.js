@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import { useParams } from "react-router-dom"
 import ratingStar from "../assets/img/Star.png"
+import * as CiIcons from "react-icons/ci";
 
 function ProductDetails() {
     const params = useParams();
@@ -17,6 +18,7 @@ function ProductDetails() {
     }, [params.id])
     return (
         <div className='productDetailsDiv'>
+            <a className='backButton' href="/">{<CiIcons.CiCircleChevLeft />}</a>
             <h2>{arrayData.title}</h2>
             <div className='detailsContainer'>
                 <img src={arrayData.thumbnail}></img>
