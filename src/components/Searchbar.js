@@ -47,7 +47,7 @@ function SearchBar({ placeholder, data }) {
                     )}
                 </div>
             </div>
-            {filteredData.length != 0 && (
+            {filteredData.length !== 0 && (
                 // wenn die eingabe nicht 0 ist, sollen suchergebnisse angezeigt werden
                 <div className="searchResults">{filteredData.slice(0, 3).map((value,
                     //mit slice vor dem map grenzen wir die suchergebnisse auf 4 ein, damit wir nicht den ganzen array laden (=>performance) + mit 3 haben wir keinen scroll.
