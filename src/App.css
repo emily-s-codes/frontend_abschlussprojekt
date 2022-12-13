@@ -116,6 +116,7 @@ input:focus {
 
 .searchItems p {
   margin-left: 10px;
+  position: fixed;
 }
 
 .searchResults a {
@@ -156,6 +157,16 @@ input:focus {
   border-radius: 10px;
 }
 
+.categoryLabel,
+.priceLabel,
+.brandLabel {
+  display: inline-block;
+  border: 2px solid #364FD4;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
 
 .categoryCheckbox:checked+label,
 .priceCheckbox:checked+label,
@@ -165,9 +176,10 @@ input:focus {
   background-color: #364FD4;
 }
 
-.selected {
-  border: 1px solid blue;
-
+.categoryCheckbox,
+.priceCheckbox,
+.brandCheckbox {
+  display: none;
 }
 
 /* =======Homepage========== */
