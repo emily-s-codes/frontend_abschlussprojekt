@@ -20,12 +20,17 @@
 }
 
 .navbarButton {
+  align-items: center;
   background-color: #364FD4;
-  padding: 1%;
   margin-left: 5px;
   border-radius: 10px;
   height: 50px;
   width: 50px;
+}
+
+.navbarButton img {
+  width: 30px;
+  height: 30px;
 }
 
 /*======== Searchbar =======*/
@@ -110,12 +115,6 @@ input:focus {
 }
 
 /* ======== Other; needs sorting ======= */
-
-.navbarButton {
-  background-color: #364FD4;
-  height: 34px;
-  width: 50px;
-}
 
 .homeProductDisplay {
   display: grid;
