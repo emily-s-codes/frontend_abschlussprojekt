@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ratingStar from "../assets/img/Star.png"
+import './SingleProduct.css'
 
 
 function SingleProduct() {
@@ -15,17 +16,17 @@ function SingleProduct() {
     }, [])
 
     return (
-        <div>
+        <div className='SProductDiv'>
             {arrayData?.products?.map(product => {
                 return (
-                    <div key={product.id}>
-                        <img src={product.thumbnail} alt={product.title}></img>
+                    <div id='cardStyle' key={product.id}>
+                        <img id='imgStyle' src={product.thumbnail} alt={product.title}></img>
                         <div className='ratingDiv'>
-                            <img src={ratingStar} alt="star"></img>
-                            <p>{product.rating}</p>
+                            <img id='starStyle' src={ratingStar} alt="star"></img>
+                            <p id='ratingStyle'>{product.rating}</p>
                         </div>
-                        <p>{product.title}</p>
-                        <p>{product.price}</p>
+                        <p id='titleStyle'>{product.title}</p>
+                        <p id='priceStyle'>${product.price}</p>
                     </div>
                 )
             })}

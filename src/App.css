@@ -76,6 +76,8 @@ input:focus {
 
 .navbarButton {
   background-color: #364FD4;
+  height: 34px;
+  width: 50px;
 }
 
 .homeProductDisplay {
@@ -97,4 +99,12 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
+}
+
+/* =======Homepage========== */
+
+.homeProductDisplay {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto
 }
