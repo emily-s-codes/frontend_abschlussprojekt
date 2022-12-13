@@ -58,7 +58,7 @@ function SearchBar() {
                     // note to myself: filteredData war vor enteredInput searchData
                     return (<a key={index} className="searchItems" href={`/product/${value?.id}`} target="_blank">
                         {console.log(value.title)}
-                        <p>{value.title}`</p>
+                        <p>{value.title}</p>
                     </a>);
                 })}
                 </div >
