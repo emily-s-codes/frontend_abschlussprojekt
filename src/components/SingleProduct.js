@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ratingStar from "../assets/img/Star.png"
-import './SingleProduct.css'
 
 
 function SingleProduct() {
