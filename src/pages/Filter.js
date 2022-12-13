@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Filter() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
-    const [selectedCategories, setSelectedCategories] = useState(!categories);
+    let [selectedCategories, setSelectedCategories] = useState([]);
     const [buttonSelect, setButtonSelect] = useState(false);
 
     useEffect(() => {
@@ -32,21 +32,27 @@ function Filter() {
     if (!categories) {
         return <div>Loading categories...</div>;
     }
-
+    // use react not dom
     const chosenCategories = document.getElementsByName("filterCategories");
-
+    // onchange push selected category to selected or remove
     let selected = [];
-    const filterCategories = () => {
-        selected = chosenCategories.checked;
-        const filteredCategories = products?.filter(singleItem => singleItem.title.toLowerCase().includes(selected));
-        setSelectedCategories(filteredCategories)
-    }
+    // const filterCategories = () => {
+
+    //     let selectedCategories = categories?.filter(category => category === products.category);
+    //     console.log(selectedCategories)
+    //     setSelectedCategories(selectedCategories)
+    // }
 
     console.log(selected)
 
     function clickHandler(e) {
-        setButtonSelect(!buttonSelect);
+        if (e.target.checked) {
+            setSelectedCategories(prev => [...prev, e.target.name]);
+        }
+        console.log(e.target.checked)
+
     }
+    console.log(selectedCategories)
 
     return (
         <div>
@@ -60,8 +66,8 @@ function Filter() {
                     {categories?.map((category, index) => {
                         return (
                             <section key={index}>
-                                <input type="checkbox" name="filterCategories" id={category} className="categoryCheckbox" />
-                                <label onClick={clickHandler} htmlFor={category} className={buttonSelect ? "" : "selected"}>{category}</label>
+                                <input onClick={clickHandler} type="checkbox" name={category} id={category} className="categoryCheckbox" />
+                                <label htmlFor={category} className={buttonSelect ? "selected" : ""}>{category}</label>
                             </section>
                         )
                     })}
@@ -84,7 +90,8 @@ function Filter() {
                     })}
                 </section>
             </div>
-            <button className='filterButton' type='button' onClick={filterCategories}>Apply Filter</button>
+            {/* onClick={filterCategories} */}
+            <button className='filterButton' type='button' >Apply Filter</button>
         </div >
     )
 }
