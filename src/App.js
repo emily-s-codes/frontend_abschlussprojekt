@@ -5,7 +5,6 @@ import Onboarding from "./pages/Onboarding";
 import ProductDetail from "./pages/ProductDetails";
 import Filter from "./pages/Filter";
 import ProductList from "./pages/ProductList";
-import { useEffect, useState } from 'react';
 
 function App() {
   return (

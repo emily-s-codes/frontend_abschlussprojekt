@@ -2,8 +2,6 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import SingleProduct from '../components/SingleProduct'
-import Filter from './Filter'
-import { clickHandlerAllFilters } from "./Filter";
 
 function ProductList() {
     return (
