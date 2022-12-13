@@ -19,7 +19,6 @@ function Navbar() {
 
     return (
         <div className="navBarBox">
-            <CiIcons.CiSearch />
             <SearchBar placeholder="Enter product name" />
             <button className='navbarButton'><img alt="" src={filterButton}></img></button>
         </div>
