@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 function Filter() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState(!categories);
+    const [buttonSelect, setButtonSelect] = useState(false);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products/categories")
@@ -19,13 +21,31 @@ function Filter() {
         fetch("https://dummyjson.com/products")
             .then(res => res.json())
             .then((products) => {
-                setProducts(products)
-                console.log(products.products)
+                setProducts(products.products)
+                console.log(products)
             })
     }, [])
 
-    function handleClick() {
+    if (!products) {
+        return <div>Loading products...</div>;
+    }
+    if (!categories) {
+        return <div>Loading categories...</div>;
+    }
 
+    const chosenCategories = document.getElementsByName("filterCategories");
+
+    let selected = [];
+    const filterCategories = () => {
+        selected = chosenCategories.checked;
+        const filteredCategories = products?.filter(singleItem => singleItem.title.toLowerCase().includes(selected));
+        setSelectedCategories(filteredCategories)
+    }
+
+    console.log(selected)
+
+    function clickHandler(e) {
+        setButtonSelect(!buttonSelect);
     }
 
     return (
@@ -39,7 +59,10 @@ function Filter() {
                     <h3>Categories</h3>
                     {categories?.map((category, index) => {
                         return (
-                            <p key={index} onClick={handleClick}>{category}</p>
+                            <section key={index}>
+                                <input type="checkbox" name="filterCategories" id={category} className="categoryCheckbox" />
+                                <label onClick={clickHandler} htmlFor={category} className={buttonSelect ? "" : "selected"}>{category}</label>
+                            </section>
                         )
                     })}
                 </section>
@@ -61,7 +84,7 @@ function Filter() {
                     })}
                 </section>
             </div>
-            <button className='filterButton' type='button'>Apply Filter</button>
+            <button className='filterButton' type='button' onClick={filterCategories}>Apply Filter</button>
         </div >
     )
 }
