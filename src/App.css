@@ -131,11 +131,31 @@ input:focus {
   background-color: #364FD4;
   padding: 1%;
   border-radius: 10px;
-
 }
 
-.selected {
-  border: 1px solid blue;
+.categoryLabel,
+.priceLabel,
+.brandLabel {
+  display: inline-block;
+  border: 2px solid #364FD4;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.categoryCheckbox:checked+label,
+.priceCheckbox:checked+label,
+.brandCheckbox:checked+label {
+  border: 1px solid #364FD4;
+  color: #ffffff;
+  background-color: #364FD4;
+}
+
+.categoryCheckbox,
+.priceCheckbox,
+.brandCheckbox {
+  display: none;
 }
 
 /* =======Homepage========== */
