@@ -5,6 +5,9 @@ import { Link } from "react-router-dom"
 function Filter() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
+    const [arrayData, setArrayData] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState(arrayData);
+    const [buttonSelect, setButtonSelect] = useState(false);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products/categories")
@@ -24,9 +27,43 @@ function Filter() {
             })
     }, [])
 
-    function handleClick() {
+    useEffect(() => {
+        fetch("https://dummyjson.com/products")
+            .then((response) => response.json())
+            .then((arrayData) => {
+                setArrayData(arrayData.products)
+                console.log(arrayData)
+            })
+    }, [])
+
+    const [subset, setSubset] = useState(arrayData);
+
+    if (!arrayData) {
+        return;
+    }
+
+    const chosenCategories = document.getElementsByName("filterCategories");
+
+    chosenCategories.forEach(category => {
+        console.log(category.id)
+    })
+
+    let selected = [];
+    const filterCategories = () => {
+        selected = chosenCategories.checked;
+        const filteredCategories = arrayData.filter(singleItem => singleItem.title.toLowerCase().includes(selected));
+        setSelectedCategories(filteredCategories)
+    }
+    if (subset) {
+        console.log(subset);
+    }
+
+    function clickHandler(e) {
+        setButtonSelect(!buttonSelect);
 
     }
+
+
 
     return (
         <div>
@@ -37,9 +74,21 @@ function Filter() {
             <div>
                 <section className='categories'>
                     <h3>Categories</h3>
+                    {chosenCategories.forEach(category => {
+                        console.log(category.id)
+                    })}
+                    {arrayData?.map(singleItem => {
+                        return (
+                            <section key={singleItem.id}>
+                                <input type="checkbox" name="filterCategories" id={singleItem.title} className="categoryCheckbox" />
+                                <label onClick={clickHandler} htmlFor={singleItem.title} className={buttonSelect ? "" : "selected"}>{singleItem.category}</label>
+                                {/* <label onClick={() => setButtonSelect(!buttonSelect)} className={buttonSelect ? "" : "selected"} htmlFor={singleItem.title}>{singleItem.category}</label> */}
+                            </section>
+                        )
+                    })}
                     {categories?.map((category, index) => {
                         return (
-                            <p key={index} onClick={handleClick}>{category}</p>
+                            <p key={index} onClick={clickHandler}>{category}</p>
                         )
                     })}
                 </section>
