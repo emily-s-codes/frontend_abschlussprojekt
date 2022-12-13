@@ -24,6 +24,10 @@ function Filter() {
             })
     }, [])
 
+    function handleClick() {
+
+    }
+
     return (
         <div>
             <div className='filterNav'>
@@ -35,7 +39,7 @@ function Filter() {
                     <h3>Categories</h3>
                     {categories?.map((category, index) => {
                         return (
-                            <p key={index}>{category}</p>
+                            <p key={index} onClick={handleClick}>{category}</p>
                         )
                     })}
                 </section>
