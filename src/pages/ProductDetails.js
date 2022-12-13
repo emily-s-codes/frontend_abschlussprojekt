@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import { useParams } from "react-router-dom"
+import ratingStar from "../assets/img/Star.png"
 
 function ProductDetails() {
     const params = useParams();
@@ -15,8 +16,26 @@ function ProductDetails() {
             })
     }, [params.id])
     return (
-        <div>
-            <p>{arrayData.title}</p>
+        <div className='productDetailsDiv'>
+            <h2>{arrayData.title}</h2>
+            <div className='detailsContainer'>
+                <img src={arrayData.thumbnail}></img>
+                <div className='buttonContainer'>
+                    <p>{arrayData.title}</p>
+                    <div className='counterDiv'>
+                        <button>-</button>
+                        <p>0</p>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div className='ratingBox'>
+                    <img id='starStyle' src={ratingStar} alt="star"></img>
+                    <p>{arrayData.rating}</p>
+                </div>
+                <h3>Description:</h3>
+                <p>{arrayData.description}</p>
+                <button>Add to cart</button>
+            </div>
             <Footer />
         </div>
     )

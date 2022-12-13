@@ -5,8 +5,9 @@ import { Link } from "react-router-dom"
 function Filter() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
-    let [selectedCategories, setSelectedCategories] = useState([]);
-    const [buttonSelect, setButtonSelect] = useState(false);
+    const [selectedCategories, setSelectedCategories] = useState([]);
+    const [selectedPrice, setSelectedPrice] = useState([]);
+    const [selectedBrands, setSelectedBrands] = useState([]);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products/categories")
@@ -32,27 +33,32 @@ function Filter() {
     if (!categories) {
         return <div>Loading categories...</div>;
     }
-    // use react not dom
-    const chosenCategories = document.getElementsByName("filterCategories");
-    // onchange push selected category to selected or remove
-    let selected = [];
-    // const filterCategories = () => {
 
-    //     let selectedCategories = categories?.filter(category => category === products.category);
-    //     console.log(selectedCategories)
-    //     setSelectedCategories(selectedCategories)
-    // }
-
-    console.log(selected)
-
-    function clickHandler(e) {
-        if (e.target.checked) {
-            setSelectedCategories(prev => [...prev, e.target.name]);
-        }
-        console.log(e.target.checked)
-
+    // select & deselect categories
+    function clickHandlerCategory(e) {
+        e.target.checked ?
+            setSelectedCategories(prev => [...prev, e.target.name]) :
+            setSelectedCategories(prev => [...prev.filter(item => item !== e.target.name)]);
     }
-    console.log(selectedCategories)
+    console.log(selectedCategories) // array of categories, check adds, uncheck removes
+
+    function clickHandlerPrice(e) {
+        e.target.checked ?
+            setSelectedPrice(prev => [...prev, e.target.id]) :
+            setSelectedPrice(prev => [...prev.filter(item => item !== e.target.id)]);
+    }
+    console.log(selectedPrice) //  // array of prices, check adds, uncheck removes
+
+    function clickHandlerBrand(e) {
+        e.target.checked ?
+            setSelectedBrands(prev => [...prev, e.target.name]) :
+            setSelectedBrands(prev => [...prev.filter(item => item !== e.target.name)]);
+    }
+    console.log(selectedBrands) // array of brands, check adds, uncheck removes
+
+    // function clickHandlerAllFilters() {
+    //     KOMMT!
+    // }
 
     return (
         <div>
@@ -66,8 +72,8 @@ function Filter() {
                     {categories?.map((category, index) => {
                         return (
                             <section key={index}>
-                                <input onClick={clickHandler} type="checkbox" name={category} id={category} className="categoryCheckbox" />
-                                <label htmlFor={category} className={buttonSelect ? "selected" : ""}>{category}</label>
+                                <input onClick={clickHandlerCategory} type="checkbox" name={category} id={category} className="categoryCheckbox" />
+                                <label htmlFor={category} className="categoryLabel" >{category} </label>
                             </section>
                         )
                     })}
@@ -75,17 +81,27 @@ function Filter() {
                 <section className='price'>
                     <h3>Price</h3>
                     <article>
-                        <p>0 - 20 €</p>
-                        <p>20 - 50 €</p>
-                        <p>50 - 100 €</p>
-                        <p>über 100 €</p>
+                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price1" className='priceCheckbox' />
+                        <label htmlFor="price1" className='priceLabel'>0 - 20 €</label>
+                        <br />
+                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price2" className='priceCheckbox' />
+                        <label htmlFor="price2" className='priceLabel'>20 - 50 €</label>
+                        <br />
+                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price3" className='priceCheckbox' />
+                        <label htmlFor="price3" className='priceLabel'>50 - 100 €</label>
+                        <br />
+                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price4" className='priceCheckbox' />
+                        <label htmlFor="price4" className='priceLabel'>über 100 €</label>
                     </article>
                 </section>
                 <section className='brands'>
                     <h3>Brands</h3>
-                    {products?.products?.map((item, index) => {
+                    {products?.map((item, index) => {
                         return (
-                            <p key={index}>{item.brand}</p>
+                            <section key={index}>
+                                <input onClick={clickHandlerBrand} type="checkbox" name={item.brand} id={item.brand} className="brandCheckbox" />
+                                <label htmlFor={item.brand} className='brandLabel'>{item.brand}</label>
+                            </section>
                         )
                     })}
                 </section>
