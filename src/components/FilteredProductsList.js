@@ -14,3 +14,4 @@ export default FilteredProductsList
 
 // const filteredItems = items.filter(item => item.toLowerCase().includes(searchString));
 // const searchString = filter.state.searchString.toLowerCase();
+
