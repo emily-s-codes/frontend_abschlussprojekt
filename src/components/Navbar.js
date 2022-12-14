@@ -20,7 +20,7 @@ function Navbar() {
     return (
         <div className="navBarBox">
             <SearchBar placeholder="Enter product name" />
-            <Link to={"/filter"}> <button className='navbarButton'><img alt="" src={filterButton}></img></button></Link>
+            <Link to={"/productlist"}> <button className='navbarButton'><img alt="" src={filterButton}></img></button></Link>
         </div>
     )
 }

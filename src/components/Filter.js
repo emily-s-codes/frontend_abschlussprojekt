@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as CiIcons from "react-icons/ci";
 import { Link } from "react-router-dom"
 
 function Filter(props) {
@@ -32,13 +31,9 @@ function Filter(props) {
 
     return (
         <div className='filterComponent'>
-            <div className='filterNav'>
-                <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
-                <h2 className='filterHeadline'>Filters</h2>
-            </div>
+            <h3>Categories</h3>
             <div className='navbar'>
                 <section className='categories'>
-                    <h3>Categories</h3>
                     {props?.categories?.map((category, index) => {
                         return (
                             <section key={index}>
@@ -48,24 +43,22 @@ function Filter(props) {
                         )
                     })}
                 </section>
+                <h3>Price</h3>
                 <section className='price'>
-                    <h3>Price</h3>
-                    <article>
-                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price1" className='priceCheckbox' />
-                        <label htmlFor="price1" className='priceLabel'>0 - 20 €</label>
-                        <br />
-                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price2" className='priceCheckbox' />
-                        <label htmlFor="price2" className='priceLabel'>20 - 50 €</label>
-                        <br />
-                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price3" className='priceCheckbox' />
-                        <label htmlFor="price3" className='priceLabel'>50 - 100 €</label>
-                        <br />
-                        <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price4" className='priceCheckbox' />
-                        <label htmlFor="price4" className='priceLabel'>über 100 €</label>
-                    </article>
+                    <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price1" className='priceCheckbox' />
+                    <label htmlFor="price1" className='priceLabel'>0 - 20 €</label>
+                    <br />
+                    <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price2" className='priceCheckbox' />
+                    <label htmlFor="price2" className='priceLabel'>20 - 50 €</label>
+                    <br />
+                    <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price3" className='priceCheckbox' />
+                    <label htmlFor="price3" className='priceLabel'>50 - 100 €</label>
+                    <br />
+                    <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price4" className='priceCheckbox' />
+                    <label htmlFor="price4" className='priceLabel'>über 100 €</label>
                 </section>
+                <h3>Brands</h3>
                 <section className='brands'>
-                    <h3>Brands</h3>
                     {props?.products?.map((item, index) => {
                         return (
                             <section key={index}>
