@@ -146,6 +146,10 @@ input:focus {
 }
 
 /* =======Filter======= */
+.filterComponentHide {
+  display: none;
+}
+
 .filterNav {
   display: flex;
 }
@@ -291,6 +295,11 @@ input:focus {
 
 
 /* ============ ProductList Style ============== */
+.filteredByP {
+  font-family: poppins_600;
+  font-weight: 600;
+  font-size: 14px;
+}
 
 .productListStyle {
   display: flex;
