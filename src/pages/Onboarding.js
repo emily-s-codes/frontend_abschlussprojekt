@@ -8,7 +8,7 @@ function Onboarding() {
         <div>
             <img alt="shop cartoon" src={Illustration}></img>
             <div>
-                <h2>Biggest Sell at your Fingertips</h2>
+                <h2>Biggest Sales at your Fingertips</h2>
                 <p>Find your best products from popular shops without delay</p>
                 <Link to={"/home"}><button className='getStartedButton'>Get Started</button></Link>
             </div>
