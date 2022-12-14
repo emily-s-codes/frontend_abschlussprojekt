@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as CiIcons from "react-icons/ci";
 import { Link } from "react-router-dom";
 
+
 function SearchBar() {
 
     const [searchData, setSearchData] = useState([]);
@@ -54,7 +55,7 @@ function SearchBar() {
                     //mit slice vor dem map grenzen wir die suchergebnisse auf 4 ein, damit wir nicht den ganzen array laden (=>performance) + mit 3 haben wir keinen scroll.
                     index) => {
                     // note to myself: filteredData war vor enteredInput searchData
-                    return (<Link key={index} className="searchItems" href={`/product/${value?.id}`} >
+                    return (<Link key={index} className="searchItems" to={`/product/${value?.id}`} >
                         {console.log(value.title)}
                         <p>{value.title}</p>
                     </Link>);
