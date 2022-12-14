@@ -41,7 +41,6 @@ function Filter(props) {
     return (
         <div>
             <div >
-                <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
                 <h2 className={props.showFilter ? `filterHeadline filterComponentHide` : `filterHeadline`}>Filters </h2>
                 <h2 className={props.showFilter ? `filterHeadline` : `filterHeadline filterComponentHide`}>Filtered by: </h2>
                 {props.filter.map((product, index) => {
