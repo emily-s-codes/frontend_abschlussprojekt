@@ -5,26 +5,19 @@ import { Link } from "react-router-dom";
 import * as CiIcons from "react-icons/ci";
 
 
-function Navbar() {
-    // const [usableData, setUsableData] = useState([]);
-
-    // useEffect(() => {
-    //     if (arrayData === undefined) {
-    //         return
-    //     } else if (props.searchTerm) {
-
-    //     } else { }
-    // })
-
-
-
+function Navbar(props) {
     return (
         <div className="navBarBox">
             <SearchBar placeholder="Enter product name" />
             <Link to={"/productlist"}> <button className='navbarButton'><img alt="" src={filterButton}></img></button></Link>
-            <button className='shoppingCart'><img alt="shopping cart icon"></img></button>
+            <div className='shoppingCartDiv'>
+                <button className='shoppingCart'>{<CiIcons.CiShoppingCart />}</button>
+            </div>
+            <div className='signInDiv'>
+                <button className='signIn'>{<CiIcons.CiUser />}</button>
+            </div>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

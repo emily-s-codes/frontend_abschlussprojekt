@@ -37,8 +37,9 @@ function Filter(props) {
                 <h2 className='filterHeadline'>Filters</h2>
             </div>
             <div className='navbar'>
+                <h3>Categories</h3>
                 <section className='categories'>
-                    <h3>Categories</h3>
+
                     {props?.categories?.map((category, index) => {
                         return (
                             <section key={index}>
