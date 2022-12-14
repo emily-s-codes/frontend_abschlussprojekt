@@ -12,7 +12,7 @@ function SearchBar() {
             .then((response) => response.json())
             .then((searchData) => {
                 setSearchData(searchData.products)
-                console.log(searchData.products)
+                // console.log(searchData.products)
             })
     }, [])
 

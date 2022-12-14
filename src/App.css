@@ -270,3 +270,14 @@ input:focus {
   font-weight: 400;
   font-size: 12px;
 }
+
+
+/* ============ LIFTING-STATE-UP EXERCISE ============== */
+
+.filterComponentShow {
+  display: block;
+}
+
+.filterComponentHide {
+  display: none;
+}
