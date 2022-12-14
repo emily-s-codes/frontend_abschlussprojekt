@@ -1,5 +1,4 @@
 import React from 'react';
-import * as CiIcons from "react-icons/ci";
 import { Link } from "react-router-dom"
 
 function Filter(props) {
@@ -41,7 +40,6 @@ function Filter(props) {
     return (
         <div>
             <div >
-                <h2 className={props.showFilter ? `filterHeadline filterComponentHide` : `filterHeadline`}>Filters </h2>
                 <h2 className={props.showFilter ? `filterHeadline` : `filterHeadline filterComponentHide`}>Filtered by: </h2>
                 {props.filter.map((product, index) => {
                     return <p key={index} className={props.showFilter ? `filteredByP` : `filteredByP filterComponentHide`}>{product}</p>
