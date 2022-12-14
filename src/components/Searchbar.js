@@ -53,10 +53,10 @@ function SearchBar() {
                     //mit slice vor dem map grenzen wir die suchergebnisse auf 4 ein, damit wir nicht den ganzen array laden (=>performance) + mit 3 haben wir keinen scroll.
                     index) => {
                     // note to myself: filteredData war vor enteredInput searchData
-                    return (<a key={index} className="searchItems" href={`/product/${value?.id}`} >
+                    return (<Link key={index} className="searchItems" href={`/product/${value?.id}`} >
                         {console.log(value.title)}
                         <p>{value.title}</p>
-                    </a>);
+                    </Link>);
                 })}
                 </div >
             )}
