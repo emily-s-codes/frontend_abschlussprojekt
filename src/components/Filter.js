@@ -1,81 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as CiIcons from "react-icons/ci";
 import { Link } from "react-router-dom"
 
-function Filter() {
-    const [categories, setCategories] = useState([]);
-    const [products, setProducts] = useState([]);
-    const [selectedCategories, setSelectedCategories] = useState([]);
-    const [selectedPrice, setSelectedPrice] = useState([]);
-    const [selectedBrands, setSelectedBrands] = useState([]);
-    const [filtered, setFiltered] = useState([]);
-
-    useEffect(() => {
-        fetch("https://dummyjson.com/products/categories")
-            .then(res => res.json())
-            .then((categories) => {
-                setCategories(categories)
-                console.log(categories)
-            })
-    }, [])
-
-    useEffect(() => {
-        fetch("https://dummyjson.com/products")
-            .then(res => res.json())
-            .then((products) => {
-                setProducts(products.products)
-                console.log(products)
-            })
-    }, [])
-
-    if (!products) {
-        return <div>Loading products...</div>;
-    }
-    if (!categories) {
-        return <div>Loading categories...</div>;
-    }
-
-    // select & deselect categories
+function Filter(props) {
+    const [filter, setFilter] = useState([]);
+    const [seeFilter, setSeeFilter] = useState(false);
+    // setting console log (filter) within the functions below, after the ternary operator, results in faulty logging. setState is asynchronous. viewing the entire array in console.log with the button click at the end seems to work well 
     function clickHandlerCategory(e) {
         e.target.checked ?
-            setSelectedCategories(prev => [...prev, e.target.name]) :
-            setSelectedCategories(prev => [...prev.filter(item => item !== e.target.name)]);
+            setFilter(prev => [...prev, e.target.name]) :
+            setFilter(prev => [...prev.filter(item => item !== e.target.name)]);
     }
-    console.log(selectedCategories) // array of categories, check adds, uncheck removes
 
     function clickHandlerPrice(e) {
         e.target.checked ?
-            setSelectedPrice(prev => [...prev, e.target.id]) :
-            setSelectedPrice(prev => [...prev.filter(item => item !== e.target.id)]);
+            setFilter(prev => [...prev, e.target.id]) :
+            setFilter(prev => [...prev.filter(item => item !== e.target.id)]);
     }
-    console.log(selectedPrice) //  // array of prices, check adds, uncheck removes
 
     function clickHandlerBrand(e) {
         e.target.checked ?
-            setSelectedBrands(prev => [...prev, e.target.name]) :
-            setSelectedBrands(prev => [...prev.filter(item => item !== e.target.name)]);
+            setFilter(prev => [...prev, e.target.name]) :
+            setFilter(prev => [...prev.filter(item => item !== e.target.name)]);
     }
-    console.log(selectedBrands) // array of brands, check adds, uncheck removes
 
-    function clickHandlerAllFilters(props) {
-        return (
-            setFiltered(prev => [...prev, selectedCategories, selectedPrice, selectedBrands])
-        )
+    function clickToSelection() {
+        console.log(filter);
+        console.log("Well done");
+        setSeeFilter(!seeFilter)
     }
-    console.log(typeof filtered)
-    console.log(filtered)
-    // console.log(filtered.filter(item => (item === products)))
 
     return (
-        <div>
+        <div className='filterComponent'>
             <div className='filterNav'>
                 <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
                 <h2 className='filterHeadline'>Filters</h2>
             </div>
-            <div>
+            <div className='navbar'>
                 <section className='categories'>
                     <h3>Categories</h3>
-                    {categories?.map((category, index) => {
+                    {props?.categories?.map((category, index) => {
                         return (
                             <section key={index}>
                                 <input onClick={clickHandlerCategory} type="checkbox" name={category} id={category} className="categoryCheckbox" />
@@ -102,7 +66,7 @@ function Filter() {
                 </section>
                 <section className='brands'>
                     <h3>Brands</h3>
-                    {products?.map((item, index) => {
+                    {props?.products?.map((item, index) => {
                         return (
                             <section key={index}>
                                 <input onClick={clickHandlerBrand} type="checkbox" name={item.brand} id={item.brand} className="brandCheckbox" />
@@ -112,8 +76,10 @@ function Filter() {
                     })}
                 </section>
             </div>
-            <button onClick={clickHandlerAllFilters} className='filterButton' type='button'>Apply Filter</button>
-        </div >
+            <Link to={"/productlist"}>
+                <button onClick={clickToSelection} className='filterButton' type='button'>Apply Filter</button>
+            </Link>
+        </div>
     )
 }
 
