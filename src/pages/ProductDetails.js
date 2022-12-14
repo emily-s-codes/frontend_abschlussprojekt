@@ -25,6 +25,7 @@ function ProductDetails() {
                 <img src={arrayData.thumbnail} alt={arrayData.title}></img>
                 <div className='buttonContainer'>
                     <p>{arrayData.title}</p>
+                    <p id="stock">In stock: {arrayData.stock}</p>
                     <div className='counterDiv'>
                         <button>-</button>
                         <p>0</p>
