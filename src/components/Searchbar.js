@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as CiIcons from "react-icons/ci";
 import { Link } from "react-router-dom";
 
-
 function SearchBar() {
 
     const [searchData, setSearchData] = useState([]);

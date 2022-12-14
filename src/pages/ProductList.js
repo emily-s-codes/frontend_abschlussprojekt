@@ -38,7 +38,7 @@ function ProductList(props) {
 
     return (
         <div className='productListStyle'>
-            <Link className='filterNav' to={"/"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
+            <Link className='filterNav' to={"/home"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
             <h2 className='filterHeadline'>Filters</h2>
             <Navbar />
             <Filter products={prod} setprod={setProd} categories={cat} setcat={setCat} />

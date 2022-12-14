@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import { useParams } from "react-router-dom"
 import ratingStar from "../assets/img/Star.png"
-import * as CiIcons from "react-icons/ci";
+import * as MdIcons from "react-icons/md";
 import { Link } from "react-router-dom"
 
 function ProductDetails() {
@@ -19,7 +19,7 @@ function ProductDetails() {
     }, [params.id])
     return (
         <div className='productDetailsDiv'>
-            <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
+            <Link to={"/home"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
             <h2>{arrayData.title}</h2>
             <div className='detailsContainer'>
                 <img src={arrayData.thumbnail} alt={arrayData.title}></img>
