@@ -28,6 +28,7 @@ function SingleProduct() {
                         <p id='titleStyle'>{product.title}</p>
                         <p id="inStock">In stock: {product.stock}</p>
                         <p id='priceStyle'>${product.price}</p>
+                        <button>Add to cart</button>
                     </div>
                 )
             })}
