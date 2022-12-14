@@ -19,7 +19,7 @@ function ProductDetails() {
     }, [params.id])
     return (
         <div className='productDetailsDiv'>
-            <Link to={"/"}><CiIcons.CiCircleChevLeft /></Link>
+            <Link to={"/home"}><CiIcons.CiCircleChevLeft /></Link>
             <h2>{arrayData.title}</h2>
             <div className='detailsContainer'>
                 <img src={arrayData.thumbnail} alt={arrayData.title}></img>
