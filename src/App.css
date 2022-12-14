@@ -45,7 +45,7 @@
   background-color: #364FD4;
   padding: 1%;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 13px;
   height: 50px;
   width: 50px;
   margin: 15px 0;
@@ -67,7 +67,7 @@
   border-bottom-right-radius: 0px;
   padding: 15px;
   height: 50px;
-  width: 100%;
+  width: 58vw;
   background-color: #F0F3F8;
 }
 
@@ -280,4 +280,58 @@ input:focus {
 
 .filterComponentHide {
   display: none;
+}
+
+#price1,
+#price2,
+#price3,
+#price4 {
+  display: none;
+}
+
+
+/* ============ ProductList Style ============== */
+
+.productListStyle {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 0fr 0fr 0fr;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.price {
+  display: grid;
+  grid-template-columns: 0fr 0fr 0fr 0fr;
+  margin: 5px;
+  justify-content: space-around;
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: 0fr 0fr 0fr;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.navbar label {
+  width: 28vw;
+  border: transparent;
+}
+
+.filterComponent h3 {
+  text-decoration: underline;
+  font-size: 20px;
+  font-family: poppins_600;
+}
+
+.filterHeadline {
+  font-family: poppins_600;
+  font-size: 30px;
+  margin-top: 10px;
 }
