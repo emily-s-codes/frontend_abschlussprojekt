@@ -6,7 +6,7 @@ function Onboarding() {
 
     return (
         <div>
-            <img src={Illustration}></img>
+            <img alt="shop cartoon" src={Illustration}></img>
             <div>
                 <h2>Biggest Sell at your Fingertips</h2>
                 <p>Find your best products from popular shops without delay</p>
@@ -14,7 +14,6 @@ function Onboarding() {
             </div>
         </div>
     )
-
 }
 
 export default Onboarding
