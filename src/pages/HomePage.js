@@ -1,14 +1,14 @@
 import React from 'react'
-import Bonus from '../components/Bonus'
 import Navbar from "../components/Navbar"
 import SingleProduct from "../components/SingleProduct"
 import Footer from "../components/Footer"
+import Carousel from '../components/Carousel'
 
 function HomePage() {
     return (
         <div className='homeStyle'><h2>Find your favourite Product</h2>
             <Navbar />
-            <Bonus />
+            <Carousel />
             <h3>Popular</h3>
             <div className='homeProductDisplay'>
                 <SingleProduct />
