@@ -12,18 +12,23 @@ function Carousel() {
         <div className="categoryCarousel">
             <div className="categoryContainer">
                 <img src={Dress}></img>
+                <p className="categoryP" >Category 1</p>
             </div>
             <div className="categoryContainer">
                 <img src={Sofa}></img>
+                <p className="categoryP" >Category 2</p>
             </div>
             <div className="categoryContainer">
                 <img src={Watch}></img>
+                <p className="categoryP" >Category 3</p>
             </div>
             <div className="categoryContainer">
                 <img src={Lotion}></img>
+                <p className="categoryP" >Category 4</p>
             </div>
             <div className="categoryContainer">
                 <img src={Food}></img>
+                <p className="categoryP" >Category 5</p>
             </div>
         </div>
     )
