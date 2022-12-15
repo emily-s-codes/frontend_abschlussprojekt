@@ -7,10 +7,7 @@ function FilteredProductsList(props) {
     const filter = props.filter;
     const filteredProducts = props.filteredProducts;
     const setFilteredProducts = props.setFilteredProducts;
-
-    console.log(filter)
-
-    // * to fix: each useEffect works for one render. every click on a new option kills the page.
+    const filteredProductsArray = [];
 
     // return by brand
     useEffect(() => {
@@ -18,37 +15,35 @@ function FilteredProductsList(props) {
             return console.log("products not loaded");
         }
         for (let i = 0; i < filter.length; i++) {
-            return (products?.map(product => {
+            (products?.forEach(product => {
                 if (product.brand.toLowerCase() !== filter[i].toLowerCase()) {
                     return console.log("no match")
                 }
                 if (product.brand.toLowerCase() === filter[i].toLowerCase()) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                    filteredProductsArray.push(product)
                 }
-                return filteredProducts;
             }))
         }
-        return setFilteredProducts(filteredProducts)
+        setFilteredProducts(filteredProducts)
         // eslint-disable-next-line
     }, [filter, products])
 
-    // return by category
+    // // return by category
     useEffect(() => {
         if (!products) {
             return console.log("products not loaded");
         }
         for (let i = 0; i < filter.length; i++) {
-            return (products?.map(product => {
+            (products?.forEach(product => {
                 if (product.category.toLowerCase() !== filter[i].toLowerCase()) {
                     return console.log("no match")
                 }
                 if (product.category.toLowerCase() === filter[i].toLowerCase()) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                    filteredProductsArray.push(product)
                 }
-                return filteredProducts;
             }))
         }
-        return setFilteredProducts(filteredProducts)
+        setFilteredProducts(filteredProductsArray)
         // eslint-disable-next-line
     }, [filter, products])
 
@@ -58,35 +53,33 @@ function FilteredProductsList(props) {
             return console.log("products not loaded");
         }
         for (let i = 0; i < filter.length; i++) {
-            return (products?.map(product => {
+            console.log("loop");
+            (products?.forEach(product => {
                 if (filter[i] === "0 - 20 €" && product.price < 20) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                    filteredProductsArray.push(product)
                 }
-                if (filter[i] === "20 - 50 €" && (product.price > 20 && product.price < 50)) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                if (filter[i] === "20 - 50 €" && (product.price >= 20 && product.price < 50)) {
+                    filteredProductsArray.push(product)
                 }
-                if (filter[i] === "50 - 100 €" && (product.price > 50 && product.price < 100)) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                if (filter[i] === "50 - 100 €" && (product.price >= 50 && product.price < 100)) {
+                    filteredProductsArray.push(product)
                 }
-                if (filter[i] === "100 €+" && product.price > 100) {
-                    return (setFilteredProducts(prev => [...prev, product]))
+                if (filter[i] === "100 €+" && product.price >= 100) {
+                    filteredProductsArray.push(product)
                 }
-                return filteredProducts;
             }))
         }
-        return setFilteredProducts(filteredProducts)
+        setFilteredProducts(filteredProductsArray)
         // eslint-disable-next-line
-    }, [filter, products])
+    }, [filter, products]) //
 
-    // return a map of all single product components that contain any text in title, category, or price matching the array "filter" 
-    //setuseAbleData(allPokemon.results.filter(el => el.name.slice(0, length).toLowerCase() === (props.searchTerm).toLowerCase().replaceAll(" ", "-")));
-    //, [props.searchTerm]);
+    // filteredProducts= all single product components that contain any text in title, category, or price matching the array "filter" 
+    // uniqueProducts removes duplicates from filteredProducts i.e. products that matched to more than one criterion and therefore appeared twice in filteredProducts
+    const uniqueProducts = [...new Set(filteredProducts)]
 
-    console.log(filteredProducts)
     return (
-
         < div className={props.showFilter ? `` : `filterComponentHide`}>
-            {filteredProducts.map(product => {
+            {uniqueProducts?.map(product => {
                 return (
                     <div id='cardStyle' key={product.id}>
                         <img id='imgStyle' src={product.thumbnail} alt={product.title}></img>
