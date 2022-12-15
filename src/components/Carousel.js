@@ -11,23 +11,23 @@ function Carousel() {
     return (
         <div className="categoryCarousel">
             <div className="categoryContainer">
-                <img src={Dress}></img>
+                <img src={Dress} alt="dress"></img>
                 <p className="categoryP" >Category 1</p>
             </div>
             <div className="categoryContainer">
-                <img src={Sofa}></img>
+                <img src={Sofa} alt="sofa"></img>
                 <p className="categoryP" >Category 2</p>
             </div>
             <div className="categoryContainer">
-                <img src={Watch}></img>
+                <img src={Watch} alt="watch"></img>
                 <p className="categoryP" >Category 3</p>
             </div>
             <div className="categoryContainer">
-                <img src={Lotion}></img>
+                <img src={Lotion} alt="lotion"></img>
                 <p className="categoryP" >Category 4</p>
             </div>
             <div className="categoryContainer">
-                <img src={Food}></img>
+                <img src={Food} alt="food"></img>
                 <p className="categoryP" >Category 5</p>
             </div>
         </div>

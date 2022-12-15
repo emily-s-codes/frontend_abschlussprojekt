@@ -5,43 +5,40 @@ function Filter(props) {
     // remove duplicates in brand list
 
     const allBrands = [...new Map(props?.products.map((p) => [p.brand, p]))];
-    console.log(allBrands)
     const updatedBrands = [...new Map(allBrands.map((u) => [u[0].toLowerCase()]))]
-    console.log(updatedBrands)
 
     // to be added:
     // const alphaBrands = updatedBrands.sort((a, b) => a - b)
     // console.log(alphaBrands)
 
-    // setting console log (filter) within the functions below, after the ternary operator, results in faulty logging. setState is asynchronous. viewing the entire array in console.log with the button click at the end seems to work well 
     function clickHandlerCategory(e) {
         e.target.checked ?
-            props.setFilter(prev => [...prev, e.target.name]) :
-            props.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
+            props?.setFilter(prev => [...prev, e.target.name]) :
+            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
     }
 
     function clickHandlerPrice(e) {
         e.target.checked ?
-            props.setFilter(prev => [...prev, e.target.value]) :
-            props.setFilter(prev => [...prev.props.filter(item => item !== e.target.value)]);
+            props?.setFilter(prev => [...prev, e.target.value]) :
+            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.value)]);
     }
 
     function clickHandlerBrand(e) {
         e.target.checked ?
-            props.setFilter(prev => [...prev, e.target.name]) :
-            props.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
+            props?.setFilter(prev => [...prev, e.target.name]) :
+            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
     }
 
     function clickToSelection() {
-        props.setShowFilter(!props.showFilter)
+        props?.setShowFilter(!props.showFilter)
         window.scrollTo(0, 0)
     }
 
     return (
         <div>
             <div >
-                <h2 className={props.showFilter ? `filterHeadline` : `filterHeadline filterComponentHide`}>Filtered by: </h2>
-                {props.filter.map((product, index) => {
+                <h2 className={props.showFilter ? `filterHeadline` : `filterHeadline filterComponentHide`}>Showing: </h2>
+                {props?.filter?.map((product, index) => {
                     return <p key={index} className={props.showFilter ? `filteredByP` : `filteredByP filterComponentHide`}>{product}</p>
                 })}
             </div>
