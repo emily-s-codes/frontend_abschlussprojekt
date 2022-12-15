@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as CiIcons from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 function SearchBar() {
 
@@ -12,7 +13,7 @@ function SearchBar() {
             .then((response) => response.json())
             .then((searchData) => {
                 setSearchData(searchData.products)
-                console.log(searchData.products)
+                // console.log(searchData.products)
             })
     }, [])
 
@@ -53,9 +54,10 @@ function SearchBar() {
                     //mit slice vor dem map grenzen wir die suchergebnisse auf 4 ein, damit wir nicht den ganzen array laden (=>performance) + mit 3 haben wir keinen scroll.
                     index) => {
                     // note to myself: filteredData war vor enteredInput searchData
-                    return (<a key={index} className="searchItems" href="/" target="_blank">
+                    return (<Link key={index} className="searchItems" to={`/product/${value?.id}`} >
+                        {console.log(value.title)}
                         <p>{value.title}</p>
-                    </a>);
+                    </Link>);
                 })}
                 </div >
             )}

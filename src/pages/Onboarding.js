@@ -4,8 +4,8 @@ import SplashScreen from '../components/SplashScreen/withSplashScreen'
 import './Onboarding.css'
 import Illustration from "../assets/img/Illustration.png"
 
-
 function Onboarding() {
+
     return (
         <div>
             <SplashScreen />

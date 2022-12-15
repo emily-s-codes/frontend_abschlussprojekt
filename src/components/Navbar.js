@@ -1,7 +1,8 @@
 // import React, { useEffect, useState } from 'react'
 import filterButton from "../assets/img/Vector.svg"
-import * as CiIcons from "react-icons/ci";
 import SearchBar from "./Searchbar";
+import * as MdIcons from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -20,8 +21,10 @@ function Navbar() {
     return (
         <div className="navBarBox">
             <SearchBar placeholder="Enter product name" />
-            <button className='navbarButton'><img alt="" src={filterButton}></img></button>
+            <Link to={"/productlist"}> <button className='navbarButton'><img alt="" src={filterButton}></img></button></Link>
+            <Link to={"/shoppingcart"}  >{<MdIcons.MdShoppingCart />}</Link>
         </div>
+
     )
 }
 
