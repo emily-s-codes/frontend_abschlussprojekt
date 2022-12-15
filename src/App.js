@@ -14,7 +14,6 @@ function App() {
       <Router>
 
         <Routes>
-          <Route path={"/"} element={<SplashScreen />} />
           <Route path={"/home"} element={<HomePage />} />
           <Route path={"/onboarding"} element={<Onboarding />} />
           <Route path={"/filter"} element={<Filter />} />
