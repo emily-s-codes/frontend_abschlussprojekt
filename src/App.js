@@ -27,7 +27,7 @@ function App() {
       <Router>
 
         <Routes>
-          <Route path={"/"} element={<HomePage />} />
+          <Route path={"/home"} element={<HomePage />} />
           <Route path={"/onboarding"} element={<Onboarding />} />
           <Route path={"/filter"} element={<Filter />} />
           <Route path={"/product/:id"} element={<ProductDetail />} />
