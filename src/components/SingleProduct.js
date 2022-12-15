@@ -25,7 +25,6 @@ function SingleProduct() {
                             <div className='ratingDiv'>
                                 <img id='starStyle' src={ratingStar} alt="star"></img>
                                 <p id='ratingStyle'>{product.rating}</p>
-
                             </div>
                             <p id='titleStyle'>{product.title}</p>
                             <p id="inStock">In stock: {product.stock}</p>

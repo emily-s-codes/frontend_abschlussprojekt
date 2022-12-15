@@ -5,7 +5,7 @@ import * as CiIcons from "react-icons/ci";
 
 function Footer() {
     return (
-        <div>
+        <div id="footerIcons">
             <CiIcons.CiGrid42 />
             <CiIcons.CiSearch />
         </div>

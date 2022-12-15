@@ -2,7 +2,7 @@ import './SplashScreen.css';
 import React, { useRef } from "react";
 // useSpring Hook must be inportet, with the animated component in combination
 import { useChain, useSpring, animated } from 'react-spring';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 // installation of "React-Spring" library necessary - npm install react-spring
 function SplashScreen() {

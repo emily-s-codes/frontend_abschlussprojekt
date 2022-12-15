@@ -57,8 +57,8 @@ function Filter(props) {
                         })}
                     </section>
                     <h3>Price</h3>
-                    <section className='price'>
-                        <article>
+                    <section>
+                        <article className='price'>
                             <input onClick={clickHandlerPrice} type="checkbox" name='price' id="price1" value="0 - 20 €" className='priceCheckbox' />
                             <label htmlFor="price1" className='priceLabel'>0 - 20 €</label>
                             <br />
@@ -85,7 +85,7 @@ function Filter(props) {
                     </section>
                 </div>
                 <Link to={"/productlist"}>
-                    <button onClick={clickToSelection} className='filterButton' type='button'>Apply Filter</button>
+                    <button onClick={clickToSelection} className='addToCart' type='button'>Apply Filter</button>
                 </Link>
             </div >
         </div>
