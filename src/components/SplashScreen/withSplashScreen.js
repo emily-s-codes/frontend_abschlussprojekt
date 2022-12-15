@@ -66,6 +66,9 @@ const useAnimation = (ref) => {
                 opacity: 0.99
             },
             {
+                opacity: 0
+            },
+            {
                 opacity: 0,
                 display: "none"
                 // SplashScreen must be dissolved with display none, otherwise you can't interact with the page below
