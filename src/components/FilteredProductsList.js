@@ -75,7 +75,10 @@ function FilteredProductsList(props) {
 
     // filteredProducts= all single product components that contain any text in title, category, or price matching the array "filter" 
     // uniqueProducts removes duplicates from filteredProducts i.e. products that matched to more than one criterion and therefore appeared twice in filteredProducts
-
+    function handleEditFilter() {
+        props?.setShowFilter(!props.showFilter)
+        window.scrollTo(0, 0)
+    }
 
     // const [sort, setSort] = useState(uniqueProducts)
 
@@ -99,7 +102,9 @@ function FilteredProductsList(props) {
                 <p onClick={sortLowHigh}>Lowest Price</p>
                 <p onClick={sortHighLow}>Highest Price</p>
             </section>
-
+            <section className='sortDiv'>
+                <p className={props.showFilter ? `editFilterButton` : `filterComponentHide editFilterButton`} onClick={handleEditFilter}>Edit Filter</p>
+            </section>
             {uniqueProducts?.map(product => {
                 return (
                     <Link className='removeLinkStyle' to={`/product/${product.id}`}>
