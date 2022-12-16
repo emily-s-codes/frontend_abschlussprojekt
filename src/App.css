@@ -151,6 +151,12 @@ input:focus {
   display: none;
 }
 
+.sortDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .filterNav {
   display: flex;
 }
@@ -598,3 +604,10 @@ input:focus {
 .filterImg {
   display: flex;
 }
+
+/* ============ Media Queries ============== */
+@media only screen and (min-width: 768px) {
+  .sortDiv {
+    width: 300px;
+  }
+
