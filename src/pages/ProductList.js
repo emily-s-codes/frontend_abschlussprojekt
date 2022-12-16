@@ -42,8 +42,10 @@ function ProductList() {
 
     return (
         <div className='productListStyle'>
-            <Link className='filterNav' to={"/home"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
-            <h2 className='filterHeadline'>Filters</h2>
+            <div className='headerbackstyle'>
+                <Link className="backbut" to={"/home"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
+                <h2 className='filterHeadline'>Filters</h2>
+            </div>
             <Navbar />
             <Filter products={prod} setprod={setProd} categories={cat} setcat={setCat} filter={filt} setFilter={setFilt} showFilter={showFilt} setShowFilter={setShowFilt} />
             <FilteredProductsList products={prod} setprod={setProd} categories={cat} setcat={setCat} filter={filt} setFilter={setFilt} showFilter={showFilt} setShowFilter={setShowFilt} filteredProducts={filtProd} setFilteredProducts={setFiltData} />

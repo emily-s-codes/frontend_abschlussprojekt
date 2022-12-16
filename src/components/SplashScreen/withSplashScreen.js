@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 // installation of "React-Spring" library necessary - npm install react-spring
 // useSpring Hooks must be importet, with the animated component in combination
 import { useChain, useSpring, animated } from 'react-spring';
+// import { Link } from "react-router-dom"
+
 
 
 

@@ -5,7 +5,7 @@ import Onboarding from "./pages/Onboarding";
 import ProductDetail from "./pages/ProductDetails";
 import Filter from './components/Filter';
 import ProductList from "./pages/ProductList";
-import SplashScreen from './pages/SplashScreen';
+// import SplashScreen from './pages/SplashScreen';
 import ShoppingCart from './pages/ShoppingCart';
 
 function App() {
