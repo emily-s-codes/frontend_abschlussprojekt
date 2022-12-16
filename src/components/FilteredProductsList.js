@@ -78,7 +78,7 @@ function FilteredProductsList(props) {
     const uniqueProducts = [...new Set(filteredProducts)]
 
     return (
-        < div className={props.showFilter ? `` : `filterComponentHide`}>
+        < div className={props.showFilter ? `SProductDiv` : `SProductDiv filterComponentHide`}>
             {uniqueProducts?.map(product => {
                 return (
                     <div id='cardStyle' key={product.id}>
