@@ -27,10 +27,12 @@ function SingleProduct() {
                                 <p id='ratingStyle'>{product.rating}</p>
                             </div>
                             <p id='titleStyle'>{product.title}</p>
-                            <p id="inStock">In stock: {product.stock}</p>
-                            <p id='priceStyle'>${product.price}</p>
+                            {/* <p id="inStock">In stock: {product.stock}</p> */}
+                            <div className='addToCart1_flex'>
+                                <p id='priceStyle'>${product.price}</p>
+                                <button className="addToCart1">+</button>
+                            </div>
                         </Link>
-                        <button>Add to cart</button>
                     </div>
                 )
             })}
