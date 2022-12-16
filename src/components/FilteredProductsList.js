@@ -102,7 +102,7 @@ function FilteredProductsList(props) {
 
             {uniqueProducts?.map(product => {
                 return (
-                    <Link to={`/product/${product.id}`}>
+                    <Link className='removeLinkStyle' to={`/product/${product.id}`}>
                         <div id='cardStyle' key={product.id}>
                             <img id='imgStyle' src={product.thumbnail} alt={product.title}></img>
                             <div className='ratingDiv'>

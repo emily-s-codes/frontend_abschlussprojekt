@@ -195,7 +195,7 @@ input:focus {
 .homeProductDisplay {
   display: flex;
   justify-content: center;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .homeStyle {
@@ -270,7 +270,7 @@ input:focus {
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
-  gap: 1px
+  gap: 1px;
 }
 
 .SProductDiv .sortDiv p:nth-of-type(3) {
@@ -293,6 +293,7 @@ input:focus {
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
   gap: 1px;
   text-decoration: none;
+  color: black;
 }
 
 #cardStyle a {
@@ -302,7 +303,6 @@ input:focus {
 #cardStyle a .ratingDiv {
   display: flex;
   align-items: center;
-  ;
 }
 
 #cardStyle a #starStyle {
@@ -630,6 +630,10 @@ input:focus {
 
 .filterImg {
   display: flex;
+}
+
+.removeLinkStyle {
+  text-decoration: none;
 }
 
 /* ============ Media Queries ============== */
