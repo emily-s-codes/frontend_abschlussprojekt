@@ -84,9 +84,7 @@ function Filter(props) {
                         })}
                     </section>
                 </div>
-                <Link to={"/productlist"}>
-                    <button onClick={clickToSelection} className='addToCart' type='button'>Apply Filter</button>
-                </Link>
+                <button onClick={clickToSelection} className='addToCart' type='button'>Apply Filter</button>
             </div >
         </div>
     )
