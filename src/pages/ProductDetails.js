@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 function ProductDetails() {
     const params = useParams();
     const [arrayData, setArrayData] = useState([]);
+    const [count, setCount] = useState(0);
+    const stock = arrayData.stock;
 
     useEffect(() => {
         fetch(`https://dummyjson.com/products/${params.id}`)
@@ -29,9 +31,9 @@ function ProductDetails() {
                     <div className='oben'>
                         <p>{arrayData.title}</p>
                         <div className='anzahl'>
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
+                            <button onClick={() => { setCount(count > 0 ? count - 1 : count) }}>-</button>
+                            <p>{count}</p>
+                            <button onClick={() => { setCount(count < stock ? count + 1 : count) }}>+</button>
                         </div>
                     </div>
                     <div className='starWithPrice'>
@@ -39,7 +41,7 @@ function ProductDetails() {
                         <p>{arrayData.rating}</p>
                     </div>
                     <div className='unten'>
-                        <p id="stock">{arrayData.stock} pieces in stock</p>
+                        <p id="stock">{stock} pieces in stock</p>
                         <p id="priceCard">${arrayData.price}</p>
                     </div>
                 </div>

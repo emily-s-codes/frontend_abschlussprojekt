@@ -150,6 +150,12 @@ input:focus {
   display: none;
 }
 
+.sortDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .filterNav {
   display: flex;
 }
@@ -505,4 +511,11 @@ input:focus {
   margin: 20px 0;
   font-size: 18px;
   color: rgba(5, 16, 51, 0.5);
+}
+
+/* ============ Media Queries ============== */
+@media only screen and (min-width: 768px) {
+  .sortDiv {
+    width: 300px;
+  }
 }

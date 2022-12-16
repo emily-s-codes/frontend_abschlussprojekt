@@ -43,7 +43,9 @@ function ProductList() {
     return (
         <div className='productListStyle'>
             <div className='headerbackstyle'>
-                <Link className="backbut" to={"/home"}><MdIcons.MdOutlineKeyboardArrowLeft /></Link>
+                <Link className="backbut" to={"/home"}>
+                    <MdIcons.MdOutlineKeyboardArrowLeft />
+                </Link>
                 <h2 className='filterHeadline'>Filters</h2>
             </div>
             <Navbar />

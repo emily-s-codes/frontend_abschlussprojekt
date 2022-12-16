@@ -1,12 +1,12 @@
 import React from 'react'
 // import * as FaIcons from "react-icons/fa";
 import * as CiIcons from "react-icons/ci";
-
+import { Link } from "react-router-dom"
 
 function Footer() {
     return (
         <div id="footerIcons">
-            <CiIcons.CiGrid42 />
+            <Link to={"/home"}><CiIcons.CiGrid42 /></Link>
             <CiIcons.CiSearch />
         </div>
     )
