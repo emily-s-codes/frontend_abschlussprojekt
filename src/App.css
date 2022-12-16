@@ -31,6 +31,7 @@
 
 .ratingDiv {
   display: flex;
+  margin-top: 5px;
 }
 
 /*======== Navbar =======*/
@@ -169,6 +170,8 @@ input:focus {
   padding: 10px;
   text-align: center;
   border-radius: 10px;
+  font-family: poppins_500;
+  font-size: 12px;
 }
 
 .categoryCheckbox:checked+label,
@@ -185,7 +188,7 @@ input:focus {
   display: none;
 }
 
-/* =======Homepage========== */
+/* ======= Homepage ========== */
 
 
 
@@ -213,6 +216,34 @@ input:focus {
   letter-spacing: 0.1px;
 }
 
+.categoryCarousel {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.categoryCarousel img {
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+  gap: 1px
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+}
+
+.categoryP {
+  text-align: center;
+  font-size: 10px;
+  font-family: poppins_500;
+}
+
 
 /* ============ SingleProduct Card ============== */
 
@@ -234,7 +265,39 @@ input:focus {
   align-items: flex-start;
   justify-content: flex-start;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
-  gap: 5px
+  gap: 1px
+}
+
+#cardStyle a {
+  text-decoration: none;
+}
+
+#cardStyle a .ratingDiv {
+  display: flex;
+  align-items: center;
+  ;
+}
+
+#cardStyle a #starStyle {
+  width: 11px;
+  height: 11px;
+}
+
+#cardStyle a #ratingStyle {
+  color: #828B9A;
+  font-size: 10px;
+  font-family: poppins_400;
+}
+
+#cardStyle a #titleStyle {
+  color: #1E2126;
+  font-size: 14px;
+  font-family: poppins_600;
+  margin: 2px 0 0 0;
+}
+
+#cardStyle a #priceStyle {
+  color: #364FD4;
 }
 
 
@@ -333,12 +396,17 @@ input:focus {
 .navbar label {
   width: 28vw;
   border: transparent;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
 }
 
 .filterComponent h3 {
   text-decoration: underline;
   font-size: 20px;
   font-family: poppins_600;
+  margin: 20px 0;
 }
 
 .filterHeadline {
@@ -504,6 +572,26 @@ input:focus {
 
 }
 
+.addToCart1 {
+  width: 25px;
+  height: 25px;
+  border: transparent;
+  border-radius: 50px;
+  background-color: #364FD4;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.addToCart1_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #footerIcons {
   display: flex;
   justify-content: space-around;
@@ -513,9 +601,13 @@ input:focus {
   color: rgba(5, 16, 51, 0.5);
 }
 
+.filterImg {
+  display: flex;
+}
+
 /* ============ Media Queries ============== */
 @media only screen and (min-width: 768px) {
   .sortDiv {
     width: 300px;
   }
-}
+

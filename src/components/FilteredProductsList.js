@@ -93,12 +93,13 @@ function FilteredProductsList(props) {
 
     const uniqueProducts = [...new Set(filteredProducts)]
     return (
-        < div className={props.showFilter ? `` : `filterComponentHide`}>
+        < div className={props.showFilter ? `SProductDiv` : `SProductDiv filterComponentHide`}>
             <div className='sortDiv'>
                 <p>Sort by:</p>
                 <p onClick={sortLowHigh}>Lowest Price</p>
                 <p onClick={sortHighLow}>Highest Price</p>
             </div>
+
             {uniqueProducts?.map(product => {
                 return (
                     <Link to={`/product/${product.id}`}>
