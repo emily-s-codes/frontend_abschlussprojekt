@@ -14,19 +14,19 @@ function Filter(props) {
     function clickHandlerCategory(e) {
         e.target.checked ?
             props?.setFilter(prev => [...prev, e.target.name]) :
-            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
+            props?.setFilter(prev => [...prev.filter(item => item !== e.target.name)]);
     }
 
     function clickHandlerPrice(e) {
         e.target.checked ?
             props?.setFilter(prev => [...prev, e.target.value]) :
-            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.value)]);
+            props?.setFilter(prev => [...prev.filter(item => item !== e.target.value)]);
     }
 
     function clickHandlerBrand(e) {
         e.target.checked ?
             props?.setFilter(prev => [...prev, e.target.name]) :
-            props?.setFilter(prev => [...prev.props.filter(item => item !== e.target.name)]);
+            props?.setFilter(prev => [...prev.filter(item => item !== e.target.name)]);
     }
 
     function clickToSelection() {
