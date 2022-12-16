@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ratingStar from "../assets/img/Star.png"
 // import SingleProduct from './SingleProduct';
 import { Link } from "react-router-dom"
